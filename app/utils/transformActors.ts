@@ -19,8 +19,6 @@ interface RawActorItem {
   updatedAt: string;
 }
 
-type ActorDataItem = Partial<DynamoDBItem> | Partial<RawActorItem>;
-
 export function transformActorsData(data: unknown): Actor[] {
   if (!Array.isArray(data)) {
     throw new Error("Invalid response format");
